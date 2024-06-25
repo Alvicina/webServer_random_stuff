@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   epoll.cpp                                          :+:      :+:    :+:   */
+/*   epoll_server.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvicina <alvicina@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:06:03 by alvicina          #+#    #+#             */
-/*   Updated: 2024/06/18 11:12:31 by alvicina         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:55:55 by alvicina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,7 +189,7 @@ void closeConnection(struct vars *vars, int fdToCheck)
 void echoMessage(struct vars *vars, int fdToCheck)
 {
 	//(void) fdToCheck;
-	char const *html = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 13\nConnection: close\n\nHello, Javi!";
+	char const *html = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 12\n\nHello, Javi!";
 	vars->buffer[vars->bytes_read] = 0;
 	//send(vars->events[fdToCheck].data.fd, vars->buffer, vars->bytes_read, 0);
 	printf("message: %s\n", vars->buffer);
